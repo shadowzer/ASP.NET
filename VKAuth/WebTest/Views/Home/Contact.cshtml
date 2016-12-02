@@ -1,0 +1,17 @@
+﻿@model WebTest.Controllers.VKModel
+
+<h1>
+    Successfully logged in through VK!
+</h1>
+<h2>
+    Your user ID is @Model.userID
+</h2>
+@{
+    string VKProfileURL = "https://vk.com/id" + @Model.userID;
+}
+<h2>
+    <a href="@VKProfileURL"> VK profile </a>
+</h2>
+<h2>
+    Email: @Model.email
+</h2>
