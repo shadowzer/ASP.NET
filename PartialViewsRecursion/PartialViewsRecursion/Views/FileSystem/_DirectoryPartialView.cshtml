@@ -1,0 +1,19 @@
+﻿@model PartialViewsRecursion.Models.DirectoryModel
+
+<div style="padding-left:70px">
+
+    <h3>@Model.Name  @Model.AmountElements  @Model.LastModified</h3>
+    
+        @foreach (var item in Model.GetElements())
+        {
+            if (item is PartialViewsRecursion.Models.DirectoryModel)
+            {
+                @Html.Partial("_DirectoryPartialView", item);
+            }
+            if (item is PartialViewsRecursion.Models.FileModel)
+            {
+                @Html.Partial("_FilePartialView", item);
+            }
+        }
+
+</div> 
